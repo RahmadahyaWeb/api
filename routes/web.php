@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SyncController;
+use App\Models\Sync;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "rahmad is here";
 });
+
+Route::get('/sync', [SyncController::class, 'sync'])->name('sync');
