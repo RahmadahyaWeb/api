@@ -14,8 +14,8 @@ class Sync extends Model
     {
         try {
             $response = Http::timeout(60)->asForm()->post('http://36.91.145.235/kcpapi/auth/login', [
-                'username' => env('API_USERNAME'),
-                'password' => env('API_PASSWORD'),
+                'username' => config('api.username'),
+                'password' => config('api.password'),
             ]);
 
             if ($response->successful()) {
